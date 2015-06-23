@@ -1,0 +1,39 @@
+
+
+
+/**
+ * Horizontally centers block elements
+ * Ex: .foo { @include center-block; }
+ **/
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/**
+ * Horizontally and vertically centers block elements
+ * Ex: .foo { @include center-block; }
+ **/
+@mixin center-both {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform( translate(-50%, -50%) );
+}
+
+
+
+/**
+ * Create circle
+ * Ex: .circle { @include circle(200px, #999); }
+ **/
+@mixin circle($width, $color:transparent) {
+    width: $width;
+    height: $width;
+    display:inline-block;
+    background:$color;
+    @include border-radius($width);
+}

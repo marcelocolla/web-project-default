@@ -1,0 +1,56 @@
+
+
+$max_width: 1334px; // Largura maxima dos blocos
+$lineHeight: 20px;
+$radius: 8px;
+
+
+
+
+/* 
+ * Fonts
+ */
+$fontDefault: Helvetica, Tahoma, Arial, sans-serif;
+$fontBold: Helvetica, Tahoma, Arial, sans-serif;
+
+
+
+
+
+/* 
+ * Theme - Colors
+ */
+$colorWhite: #fff;
+$colorGrey: #eee;
+$colorDark: #000;
+
+
+
+
+/* 
+ * Border Light
+ */
+$borderColor: #c0c0c0;
+
+
+
+/* 
+ * Theme palettes
+ */
+$palettes: (
+    purple: (
+        base:   rgb(42,40,80),
+        light:  rgb(51,46,140),
+        dark:   rgb(40,38,65)
+    ),
+    grey: (
+        base:  rgb(40,40,40),
+        light: rgb(65,65,65),
+        dark: rgb(15,15,15)
+    )
+);
+
+// Palette function (Ex.: color:palette(purple); )
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
